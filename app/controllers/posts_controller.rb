@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+
+
   def new
     @post = Post.new
   end
@@ -10,6 +12,11 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def genre
+    @post = Post.find_by(genre_id: params[:id])
+    @posts = Post.where(genre_id: params[:id]).order('created_at DESC')
   end
 
   private
