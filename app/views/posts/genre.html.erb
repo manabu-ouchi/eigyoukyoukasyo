@@ -1,7 +1,8 @@
 <div class="main-wrap">
-  <div class="post-main-wrap">
+  <div class="post-wraper">
     <h1 class="maim-title">投稿一覧</h1>
-    <% @posts.each do |post|%>
+    <% @posts.each do |post|%>   
+    <%= link_to post_path(post.id) do %>
     <div class="post-wrap" >
       <div class="post-header">
         <div class="post-header-title"> 投稿 </div>
@@ -14,6 +15,7 @@
       内容： <%=post.content%>
       </div>
     </div>
+    <% end %>
     <% end %>
   </div>
 
