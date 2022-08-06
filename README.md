@@ -7,7 +7,7 @@
 | encrypted_password | string  | null: false               |
 | first_name         | string  | null: false               |
 | last_name          | string  | null: false               |
-| profile            | text    | null: false               |
+| profile            | text    |                           |
 | Department_id      | integer | null: false               |
 
 
