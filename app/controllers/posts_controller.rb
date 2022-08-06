@@ -15,8 +15,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def genre
-    @post = Post.find_by(genre_id: params[:id])
+  
     @posts = Post.where(genre_id: params[:id]).order('created_at DESC')
   end
 
