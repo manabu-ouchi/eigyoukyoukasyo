@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit]
-  before_action :move_to_index, only: [:edit, :update]
-
+  before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   def new
     @post = Post.new
   end
@@ -16,15 +16,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to post_path(@post.id)
 
@@ -33,6 +30,12 @@ class PostsController < ApplicationController
     end
 
   end
+  def destroy
+    if @post.destroy
+       redirect_to root_path
+    end
+  end
+
 
   def genre
   
@@ -48,5 +51,9 @@ class PostsController < ApplicationController
   def move_to_index
     post = Post.find(params[:id])
     redirect_to root_path unless user_signed_in? && current_user.id == post.user_id
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end
