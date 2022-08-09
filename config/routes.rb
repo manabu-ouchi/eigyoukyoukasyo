@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: "posts#index"
   get '/posts/genre/:id', to: "posts#genre"
   resources :posts
+  resources :records, only: [:index, :new, :create]
 end

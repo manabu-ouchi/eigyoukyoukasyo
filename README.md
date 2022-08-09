@@ -71,12 +71,13 @@
 
 
 ## record テーブル
-| mendan              | references| null: false, foreign_key: true |
-| fulltalk            | string    | null: false                    |
-| mikomi              | string    | null: false                    |
-| mikomiuorder        | string    | null: false                    |
-| order               | string    | null: false                    |
-| payment             | string    | null: false                    |
+| mendan              | integer     | null: false                    |
+| fulltalk            | integer     | null: false                    |
+| mikomi              | integer     | null: false                    |
+| mikomiuorder        | integer     | null: false                    |
+| order               | integer     | null: false                    |
+| payment             | integer     | null: false                    |
+| user                | references  |foreign_key: true               |
 
 
 ### Association
