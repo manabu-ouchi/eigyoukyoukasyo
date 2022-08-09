@@ -15,4 +15,5 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :department
   has_many :posts
+  has_many :records
 end
