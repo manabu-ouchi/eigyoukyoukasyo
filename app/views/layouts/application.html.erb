@@ -21,7 +21,7 @@
               <%= link_to "ログアウト",destroy_user_session_path, method: :delete , class: :nav__logout%>
               <%= link_to "投稿する", new_post_path, class: :nav__btn %>
               <%= link_to "質問する", "#", class: :nav__btn %>
-              <%= link_to "結果報告", "#", class: :nav__btn %>
+              <%= link_to "結果報告", new_record_path, class: :nav__btn %>
             </div>
           <% else %>
           
