@@ -1,0 +1,11 @@
+<%= form_with model: @record, local: true do |f| %>
+<%= f.text_field :mendan, class:"price-input", id:"item-price", placeholder:"面談数" %>
+<%= f.text_field :fulltalk, class:"price-input", id:"item-price", placeholder:"フルトーク" %>
+<%= f.text_field :mikomi, class:"price-input", id:"item-price", placeholder:"見込み" %>
+<%= f.text_field :mikomiorder, class:"price-input", id:"item-price", placeholder:"見込みオーダー" %>
+<%= f.text_field :order, class:"price-input", id:"item-price", placeholder:"結果" %>
+<%= f.text_field :payment, class:"price-input", id:"item-price", placeholder:"売上げ" %>
+ <%= f.submit "結果を報告する" ,class:"sell-btn" %>
+<%end%>
+
+<%=link_to "戻る", root_path%>

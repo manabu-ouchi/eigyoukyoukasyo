@@ -1,0 +1,74 @@
+<h1>個人結果一覧<h1>  
+<table border='1'>
+
+  <tr>
+    <th>日付</th>
+    <th>所属</th>
+    <th>名前</th>
+    <th>面談</th>
+    <th>フルローク</th>
+    <th>結果</th>
+    <th>売上げ</th>
+  </tr>
+  <% @records.each do |record|%>
+  <tr>
+    <td><%= l record.created_at %></td>
+    <td><%=record.user.last_name%></td>
+    <td><%=record.user.department.name%></td>
+    <td><%=record.mendan%></td>
+    <td><%=record.fulltalk%></td>
+    <td><%=record.order%></td>
+    <td><%=record.payment%></td>
+  </tr>
+  <%end%>
+</table>
+<h1>個人ランキング</h1>
+
+<style>
+  table, th, td {
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+  }
+
+  td {
+    text-align: center;
+  }
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <th>順位</th>
+      <th>名前</th>
+      <th>オーダー本数</th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @orders.each_with_index do |order, i| %>
+      <tr>
+        <td><%= i + 1 %></td>
+        <td><%=order.first %></td>
+        <td><%=order.second %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h1>支店ランキング</h1>
+<table>
+  <thead>
+    <tr>
+      <th>順位</th>
+      <th>名前</th>
+      <th>オーダー本数</th>
+    </tr>
+  </thead>
+  <tbody>
+   <% @siten.each_with_index do |siten, i| %>
+      <tr>
+        <td><%= i + 1 %></td>
+        <td><%=siten.first %></td>
+        <td><%=siten.second %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
