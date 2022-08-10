@@ -3,6 +3,7 @@ class RecordsController < ApplicationController
     @records = Record.includes(:user).order('created_at DESC')
     @orders = Record.joins(:user).group(:last_name).order('sum_order DESC').sum(:order)
     @siten = Record.joins(:user).group(:department_id).order('sum_order DESC').sum(:order)
+    @department = Department.all
   end
 
   def new
