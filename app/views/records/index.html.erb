@@ -13,7 +13,7 @@
   <% @records.each do |record|%>
   <tr>
     <td><%= l record.created_at %></td>
-    <td><%=record.user.last_name%></td>
+    <td><%=link_to record.user.last_name, user_path(record.user.id)%></td>
     <td><%=record.user.department.name%></td>
     <td><%=record.mendan%></td>
     <td><%=record.fulltalk%></td>
@@ -66,7 +66,8 @@
    <% @siten.each_with_index do |siten, i| %>
       <tr>
         <td><%= i + 1 %></td>
-        <td><%=siten.first %></td>
+        <% department = @department.find(siten.first) %>
+        <td><%= department.name%></td>
         <td><%=siten.second %></td>
       </tr>
     <% end %>
