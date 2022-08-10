@@ -1,0 +1,53 @@
+<h1><%= @user.last_name%>さん結果一覧</h1>
+<table border='1'>
+
+  <tr>
+    <th>日付</th>
+    <th>所属</th>
+    <th>名前</th>
+    <th>面談</th>
+    <th>フルローク</th>
+    <th>見込み</th>
+    <th>見込みオーダー</th>
+    <th>結果</th>
+    <th>売上げ</th>
+  </tr>
+  <% @records.each do |record|%>
+  <tr>
+    <td><%= l record.created_at %></td>
+    <td><%=record.user.last_name%></td>
+    <td><%=record.user.department.name%></td>
+    <td><%=record.mendan%></td>
+    <td><%=record.fulltalk%></td>
+    <td><%=record.mikomi%></td>
+    <td><%=record.mikomiorder%></td>
+    <td><%=record.order%></td>
+    <td><%=record.payment%></td>
+  </tr>
+  <%end%>
+</table>
+
+<div class="main-wrap">
+  <div class="post-wraper">
+    <h1 class="maim-title"><%=@user.last_name%>さん投稿一覧</h1>
+    <% @posts.each do |post|%>   
+    <%= link_to post_path(post.id) do %>
+    <div class="post-wrap" >
+      <div class="post-header">
+        <div class="post-header-title"> 投稿 </div>
+        <div class="post-user-name">  <%= post.user.last_name%> </div>
+      </div>
+      <div class="post-title">
+      タイトル：<%= post.title%>
+      </div>
+      <div class="post-content">
+      内容： <%=post.content%>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+
+</div>
+
+
