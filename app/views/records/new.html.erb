@@ -1,11 +1,45 @@
+<div class="cp_form">
 <%= form_with model: @record, local: true do |f| %>
-<%= f.text_field :mendan, class:"price-input", id:"item-price", placeholder:"面談数" %>
-<%= f.text_field :fulltalk, class:"price-input", id:"item-price", placeholder:"フルトーク" %>
-<%= f.text_field :mikomi, class:"price-input", id:"item-price", placeholder:"見込み" %>
-<%= f.text_field :mikomiorder, class:"price-input", id:"item-price", placeholder:"見込みオーダー" %>
-<%= f.text_field :order, class:"price-input", id:"item-price", placeholder:"結果" %>
-<%= f.text_field :payment, class:"price-input", id:"item-price", placeholder:"売上げ" %>
- <%= f.submit "結果を報告する" ,class:"sell-btn" %>
-<%end%>
+<h1>結果報告</h1>
+ <%= render 'shared/error_messages', model: f.object %>
 
-<%=link_to "戻る", root_path%>
+<div class="cp_group">
+ <%= f.text_field :mendan, class:"price-input", id:"item-price", placeholder:"面談数" %>
+  <label class="cp_label" for="input">面談数</label>
+  <i class="bar"></i>
+</div>
+
+<div class="cp_group">
+<%= f.text_field :fulltalk, class:"price-input", id:"item-price", placeholder:"フルトーク" %>
+  <label class="cp_label" for="input">フルトーク数</label>
+  <i class="bar"></i>
+</div>
+<div class="cp_group">
+<%= f.text_field :mikomi, class:"price-input", id:"item-price", placeholder:"見込み" %>
+  <label class="cp_label" for="input">見込み</label>
+  <i class="bar"></i>
+</div>
+<div class="cp_group">
+<%= f.text_field :mikomiorder, class:"price-input", id:"item-price", placeholder:"見込みオーダー" %>
+  <label class="cp_label" for="input">見込みオーダー</label>
+  <i class="bar"></i>
+</div>
+<div class="cp_group">
+<%= f.text_field :order, class:"price-input", id:"item-price", placeholder:"結果" %>
+  <label class="cp_label" for="input">結果</label>
+  <i class="bar"></i>
+</div>
+<div class="cp_group">
+<%= f.text_field :payment, class:"price-input", id:"item-price", placeholder:"売上げ" %>
+  <label class="cp_label" for="input">売上げ</label>
+  <i class="bar"></i>
+</div>
+
+
+<div class="submit-btn">
+<%= f.submit "結果を報告する" ,class:"submit" %>
+</div>
+ 
+</div>
+<% end %>
+</div>

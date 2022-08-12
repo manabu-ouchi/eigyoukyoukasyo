@@ -1,0 +1,119 @@
+.record-wrap{
+  padding: 10px;
+}
+.record-ranks{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+
+.record-rank{
+  width: 30%;
+  border: 1px solid  #03A9F4;
+}
+
+
+
+.rank-title {
+  background: #B2EBF2;
+  padding: .4em .8em .3em;
+  margin: 0 0 1em;
+  text-align: left;
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+}
+.rank-title::after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 30px;
+  border: 15px solid transparent;
+  border-top: 15px solid #B2EBF2;
+  width: 0;
+  height: 0;
+}
+
+ol.cp_clist {
+	counter-reset:cp_clist; /*数字をリセット*/
+	list-style-type: none;
+	padding:0.5em;
+}
+ol.cp_clist li {
+	position: relative;
+	padding-left: 30px;
+	line-height: 1.5em;
+	padding: 0.5em 0.5em 0.5em 36px;
+}
+ol.cp_clist li::before {
+	position: absolute;
+	display:inline-block;
+	top: 50%;
+	left: 0;
+	/* カウントさせる */
+	counter-increment: cp_clist;
+	content: counter(cp_clist);
+	/*装飾*/
+	padding: 0 0.2em 0 0.2em;
+	background: #03A9F4;
+	color: #fff;
+	font-weight:bold;
+	font-size: 15px;
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	text-align:center;
+	transform: translateY(-50%);
+}
+ol.cp_clist li::after {
+	position: absolute;
+	content: '';
+	display: block;
+	top: 50%;
+	left: 18px;
+	height: 0;
+	width: 0;
+	border-top: 7px solid transparent;
+	border-bottom: 7px solid transparent;
+	border-left: 12px solid #03A9F4;
+	transform: translateY(-50%);
+}
+
+.record-list-wrap{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.record-lists{
+  margin: 0 auto;
+}
+
+.record-list-title {
+  background: #B2EBF2;
+  padding: .4em .6em .3em;
+  margin: 0 0 1em;
+  text-align: left;
+  box-shadow: 0px 0px 0px .2083em #B2EBF2;
+  border: .0417em dashed rgb(76, 175, 80);
+  border-radius: 0px;
+  color: rgb(121, 85, 72);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+}
+th, td {
+  padding: 5px;
+  border: 1px solid #333;
+}
+th {
+  background-color:#B2EBF2;
+  color: #333;
+}

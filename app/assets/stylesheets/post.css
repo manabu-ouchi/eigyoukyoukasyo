@@ -1,5 +1,7 @@
+
+
 .main-wrap{
-  height: 100vh;
+
   display: flex;
   
  }
@@ -14,6 +16,32 @@
 .post-wraper{
   width: 70%;
   margin: 0 auto;
+}
+
+.user-profile {
+	display: inline-block;
+	width: 100%;
+	max-width: 100%;
+	border: 2px solid #FF9800;
+	border-radius: 0px;
+	padding: 1.8em .8em .8em;
+	position: relative;
+	text-align: left;
+  margin: 3em 0;
+}
+.user-profile .user-content {
+	padding: .2em .4em;
+	font-size: 1.1em;
+	font-weight: bold;
+	position: absolute;
+	top: -1em;
+	left: .8em;
+	background: #FF9800;
+	color: #fff;
+	white-space: nowrap;
+}
+.user-profile > :last-child {
+	margin-bottom: 0;
 }
 
 .maim-title{
@@ -34,19 +62,89 @@
   
 }
 
+.post-title {
+  display: table;
+  padding: .6em;
+  margin: 0 0 1em;
+  white-space: nowrap;
+  color: #B2EBF2;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+.post-title::before,
+.post-title::after {
+  display: table-cell;
+  content: "";
+  background: linear-gradient(transparent 50%, currentColor 50%, currentColor calc(50% + .125em), transparent calc(50% + .125em));
+  background-clip: padding-box;
+  width: 50%;
+}
+.post-title::before {
+  border-right: .4em solid transparent;
+}
+.post-title::after {
+  border-left: .4em solid transparent;
+}
+
 .post-header{
   display: flex;
   justify-content: space-between;
-  background-color: cornflowerblue;
+  background-color:  #B2EBF2;
   border-radius: 5px 5px 0 0;
   padding: 5px;
 }
 
-.post-title{
+.post-titles{
   padding: 5px;
   text-decoration: none;
 
+}.cp_block {
+	margin: 5em auto;
+	text-align: center;
 }
+.cp_textlink04 {
+	position: relative;
+	padding: 0.1em 0.3em;
+	transition: all 0.3s ease;
+	text-decoration: none;
+	color: #4699ca;
+}
+.cp_textlink04::before {
+	position: absolute;
+	content: '';
+	left: 0;
+	bottom:0;
+	width: 100%;
+	height: 1%;
+	transition: all 0.3s ease;
+	opacity: 0;
+	background-color:  #4699ca;
+	border-radius: 50px;
+}
+.cp_textlink04::after {
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	content: '';
+	transition: all 0.3s ease;
+	border-bottom: 2px solid #4699ca;
+	opacity: 1;
+}
+.cp_textlink04:hover::before {
+	height: 100%;
+	opacity: 0.4;
+}
+.cp_textlink04:hover::after {
+	left: 50%;
+	right: 50%;
+	width: 0%;
+	opacity: 0;
+}
+
+
 .post-content{
   padding: 5px;
   text-decoration: none;

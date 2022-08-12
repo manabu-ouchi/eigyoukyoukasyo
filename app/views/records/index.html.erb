@@ -1,6 +1,30 @@
-<h1>個人結果一覧<h1>  
-<table border='1'>
-
+<div class="record-wrap">
+  <div class="record-ranks">
+    <div class="record-rank">
+      <div class="rank-title">個人ランキング</div>
+      <ol class="cp_clist">
+    <% @orders.each_with_index do |order, i| %>
+      <li><%= order.first %>さん</li>
+      
+      <% end %>
+      </ol>
+    </div>
+    <div class="record-rank">
+    <div class="rank-title">支店ランキング</div>
+      <ol class="cp_clist">
+      <% @siten.each_with_index do |siten, i| %>
+      <% department = @department.find(siten.first) %>
+      <li><%= department.name%></li>
+     
+      <% end %>
+      </ol>
+    </div>
+  </div>
+</div>
+<div class="record-list-wrap">
+  <div class="record-list-title">個人結果一覧</div>
+ 
+  <table>
   <tr>
     <th>日付</th>
     <th>所属</th>
@@ -13,8 +37,8 @@
   <% @records.each do |record|%>
   <tr>
     <td><%= l record.created_at %></td>
-    <td><%=link_to record.user.last_name, user_path(record.user.id)%></td>
     <td><%=record.user.department.name%></td>
+    <td><%=link_to record.user.last_name, user_path(record.user.id)%></td>
     <td><%=record.mendan%></td>
     <td><%=record.fulltalk%></td>
     <td><%=record.order%></td>
@@ -22,54 +46,5 @@
   </tr>
   <%end%>
 </table>
-<h1>個人ランキング</h1>
+</div>
 
-<style>
-  table, th, td {
-    border-collapse: collapse;
-    border: 1px solid #ddd;
-  }
-
-  td {
-    text-align: center;
-  }
-</style>
-
-<table>
-  <thead>
-    <tr>
-      <th>順位</th>
-      <th>名前</th>
-      <th>オーダー本数</th>
-    </tr>
-  </thead>
-  <tbody>
-   <% @orders.each_with_index do |order, i| %>
-      <tr>
-        <td><%= i + 1 %></td>
-        <td><%=order.first %></td>
-        <td><%=order.second %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<h1>支店ランキング</h1>
-<table>
-  <thead>
-    <tr>
-      <th>順位</th>
-      <th>名前</th>
-      <th>オーダー本数</th>
-    </tr>
-  </thead>
-  <tbody>
-   <% @siten.each_with_index do |siten, i| %>
-      <tr>
-        <td><%= i + 1 %></td>
-        <% department = @department.find(siten.first) %>
-        <td><%= department.name%></td>
-        <td><%=siten.second %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
