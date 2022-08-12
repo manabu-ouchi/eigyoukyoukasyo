@@ -1,6 +1,14 @@
-<h1><%= @user.last_name%>さん結果一覧</h1>
-<table border='1'>
+ 
+ 
+<div class="main-wrap">
+  <div class="post-wraper">
+ <div class="user-profile">
+	<div class="user-content">受賞歴</div>
+  <%= @user.profile%>
+</div>
 
+  <div class="record-list-title">結果一覧</div>
+  <table>
   <tr>
     <th>日付</th>
     <th>所属</th>
@@ -27,9 +35,7 @@
   <%end%>
 </table>
 
-<div class="main-wrap">
-  <div class="post-wraper">
-    <h1 class="maim-title"><%=@user.last_name%>さん投稿一覧</h1>
+  <div class="post-title">投稿一覧</div>
     <% @posts.each do |post|%>   
     <%= link_to post_path(post.id) do %>
     <div class="post-wrap" >
@@ -37,11 +43,8 @@
         <div class="post-header-title"> 投稿 </div>
         <div class="post-user-name">  <%= post.user.last_name%> </div>
       </div>
-      <div class="post-title">
+      <div class="posts-title">
       タイトル：<%= post.title%>
-      </div>
-      <div class="post-content">
-      内容： <%=post.content%>
       </div>
     </div>
     <% end %>

@@ -1,7 +1,10 @@
+
+
+
 <div class="main-wrap">
   <div class="post-wraper">
   
-    <h1 class="maim-title">投稿詳細</h1>
+    <div class="post-title">投稿詳細</div>
     <%  if user_signed_in? && current_user.id == @post.user_id %>
     <div class="prototype__manage">
           <%= link_to "編集する", edit_post_path(@post.id),method: :get, class: :prototype__btn %>
@@ -10,10 +13,10 @@
      <% end %>
     <div class="post-wrap" >
       <div class="post-header">
-        <div class="post-header-title"> 投稿 </div>
-        <div class="post-user-name">  <%= @post.user.last_name%> </div>
+        <div class="post-header-title">  <%= link_to @post.user.last_name + "さん", user_path(@post.user.id), class: "cp_textlink04"%> </div>
+        <div class="post-user-name"> </div>
       </div>
-      <div class="post-title">
+      <div class="post-titles">
         タイトル：<%= @post.title%>
       </div>
       <div class="post-content">

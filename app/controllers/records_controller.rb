@@ -19,7 +19,7 @@ class RecordsController < ApplicationController
   end
 
 
-
+  
   private
   def record_params
     params.require(:record).permit(:mendan, :fulltalk, :mikomi, :mikomiorder, :order, :payment).merge(user_id: current_user.id)
