@@ -97,7 +97,7 @@
 
 .post-titles{
   padding: 5px;
-  text-decoration: none;
+  word-wrap: break-word;
 
 }.cp_block {
 	margin: 5em auto;
@@ -147,7 +147,7 @@
 
 .post-content{
   padding: 5px;
-  text-decoration: none;
+  word-wrap: break-word;
 }
 
 
