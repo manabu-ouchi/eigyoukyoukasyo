@@ -38,8 +38,8 @@ class PostsController < ApplicationController
 
 
   def genre
-  
     @posts = Post.where(genre_id: params[:id]).order('created_at DESC')
+
   end
 
   private
