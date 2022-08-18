@@ -37,17 +37,7 @@
 
   <div class="post-title">投稿一覧</div>
     <% @posts.each do |post|%>   
-    <%= link_to post_path(post.id) do %>
-    <div class="post-wrap" >
-      <div class="post-header">
-        <div class="post-header-title"> 投稿 </div>
-        <div class="post-user-name">  <%= post.user.last_name%> </div>
-      </div>
-      <div class="posts-title">
-      タイトル：<%= post.title%>
-      </div>
-    </div>
-    <% end %>
+       <%= render partial: "posts/post", locals: { post: post } %>
     <% end %>
   </div>
 
