@@ -2,18 +2,7 @@
   <div class="post-wraper">
    <div class="post-title">投稿一覧</div>
     <% @posts.each do |post|%>   
-   
-    <div class="post-wrap" >
-      <div class="post-header">
-        <div class="post-header-title"> <%= link_to post.user.last_name + "さん", user_path(post.user.id), class: "cp_textlink04"%> </div>
-        <div class="post-user-name"><%= link_to "投稿詳細を見る", post_path(post.id),  class: "cp_textlink04" %> </div>
-      </div>
-      <div class="post-titles">
-      タイトル：<%= post.title%>
-      </div>
-      
-    </div>
-   
+       <%= render partial: "post", locals: { post: post } %>
     <% end %>
   </div>
 
