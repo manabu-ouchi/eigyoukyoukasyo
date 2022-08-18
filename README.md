@@ -50,10 +50,14 @@ https://docs.google.com/spreadsheets/d/14Q3cZya5yf4pSKuwqRcBq2PBytxXCliJrpHf1zVy
 
 # 開発環境
 ・フロントエンド：HTML、CSS
+
 ・バックエンド：Ruby
+
 ・フレームワーク：Ruby on Rails
+
 ・インフラ：Heroku
 
 # 工夫したポイント
 その技術を投稿した社員の結果、実績を見える様にした。
-自動で計算されランキングが掲載されるようにした。
+
+結果が自動で計算されランキングが掲載されるようにした。
