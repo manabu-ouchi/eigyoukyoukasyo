@@ -55,7 +55,6 @@ https://docs.google.com/spreadsheets/d/14Q3cZya5yf4pSKuwqRcBq2PBytxXCliJrpHf1zVy
 
 ・フレームワーク：Ruby on Rails
 
-・インフラ：Heroku
 
 # 工夫したポイント
 その技術を投稿した社員の結果、実績を見える様にした。
