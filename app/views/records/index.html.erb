@@ -1,16 +1,23 @@
 <div class="record-wrap">
   <div class="record-ranks">
     <div class="record-rank">
-      <div class="rank-title">個人ランキング</div>
+      <div class="rank-title">個人ランキング（契約数）</div>
       <ol class="cp_clist">
     <% @orders.each_with_index do |order, i| %>
-      <li><%= order.first %>さん</li>
+      <div class="record-rank-flex">
+        <div class="record-rank-name">
+        <li><%= order.first %>さん</li>
+        </div>
+        <div class="record-rank-order">
+        <%= order.second %>本
+        </div>
+      </div>
       
       <% end %>
       </ol>
     </div>
     <div class="record-rank">
-    <div class="rank-title">支店ランキング</div>
+    <div class="rank-title">支店ランキング（売上げ）</div>
       <ol class="cp_clist">
       <% @siten.each_with_index do |siten, i| %>
       <% department = @department.find(siten.first) %>

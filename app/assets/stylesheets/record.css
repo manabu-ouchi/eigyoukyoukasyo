@@ -9,7 +9,7 @@
 
 
 .record-rank{
-  width: 30%;
+  width: 35%;
   border: 1px solid  #03A9F4;
 }
 
@@ -82,14 +82,19 @@ ol.cp_clist li::after {
 	transform: translateY(-50%);
 }
 
+.record-rank-flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px #B2EBF2;
+}
+
 .record-list-wrap{
   width: 80%;
   margin: 0 auto;
 }
 
-.record-lists{
-  margin: 0 auto;
-}
+
 
 .record-list-title {
   background: #B2EBF2;
