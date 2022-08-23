@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "posts#index"
   get '/posts/genre/:id', to: "posts#genre"
   resources :posts do
-    resources :comments, only: :create
+    resources :comments, only: [:create, :destroy]
   end
   resources :records, only: [:index, :new, :create]
   resources :users, only: :show
