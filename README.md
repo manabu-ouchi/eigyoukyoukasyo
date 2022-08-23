@@ -54,6 +54,14 @@ https://docs.google.com/spreadsheets/d/14Q3cZya5yf4pSKuwqRcBq2PBytxXCliJrpHf1zVy
 
 ・フレームワーク：Ruby on Rails
 
+# ローカルでの動作方法
+% git clone https://github.com/manabu-ouchi/eigyoukyoukasyo.git
+
+% cd eigyoukyoukasyo.git
+
+% bundle install
+
+% yarn install
 
 # 工夫したポイント
 その技術を投稿した社員の結果、実績を見える様にした。
