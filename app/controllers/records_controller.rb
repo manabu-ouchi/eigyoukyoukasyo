@@ -1,4 +1,6 @@
 class RecordsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @records = Record.includes(:user).order('created_at DESC')
     @orders = Record.joins(:user).group(:last_name).order('sum_order DESC').sum(:order)
