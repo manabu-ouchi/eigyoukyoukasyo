@@ -23,6 +23,33 @@
        内容： <%= @post.content%>
       </div>
     </div>
+
+    <div class="post-comments">       
+      <%  if user_signed_in? %>
+      <%= form_with model: [@post,@comment], local: true do |f| %>
+        <div class="comments-field">
+          <%= f.label :comment, "コメント"%><br />
+          <%= f.text_area :comment, id:"comment_content", class:"comment-field" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "送信する", class:"comment-btn" %>
+        </div>
+      <% end %>   
+      <% end %>
+     <ul class="comments_lists">
+      <h4>＜コメント一覧＞</h4>
+      <% @comments.each do |comment| %>
+        <li class="comments_list">
+          <%= comment.comment %> 
+          <div class="comment-name-flex">
+          <%= link_to comment.user.last_name + "さん",  user_path(comment.user.id), class:"comment-name" %> 
+         
+        </li>
+      <% end %>
+    </ul>
+    </div>
   </div>
+
+ 
 
 </div>

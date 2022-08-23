@@ -1,0 +1,42 @@
+.post-comments{
+  background-color: rgb(244, 242, 242);
+  padding: 10px;
+
+}
+
+.comments-field{
+  margin-bottom: 10px;
+  
+}
+.actions{
+  margin-bottom: 20px;
+}
+
+.comment-btn{
+
+  background-color:  #B2EBF2;
+  padding: 5px 10px;
+}
+
+.comment-field
+{
+  width: 100%;
+
+}
+
+.comments_list{
+  justify-content: space-between;
+  border-bottom: solid 1px #4699ca;
+  margin-bottom: 10px;
+  word-break: break-all
+}
+
+.comment-name-flex{
+  display: flex;
+  justify-content: right;
+}
+
+.comment-name{
+  color:  #4699ca;
+  padding: 5px;
+}
