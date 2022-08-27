@@ -24,6 +24,35 @@
       </div>
     </div>
 
+     <div class="post-comments">       
+      <%  if user_signed_in? %>
+      <%= form_with model: [@question,@answer], local: true do |f| %>
+        <div class="comments-field">
+          <%= f.label :answer, "回答"%><br />
+          <%= f.text_area :answer, id:"comment_content", class:"comment-field" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "送信する", class:"comment-btn" %>
+        </div>
+      <% end %>   
+      <% end %>
+     <ul class="comments_lists">
+      <h4>＜回答一覧＞</h4>
+      <% @answers.each do |answer| %>
+        <li class="comments_list">
+          <%= answer.answer %> 
+          <div class="comment-name-flex">
+          <%= link_to answer.user.last_name + "さん",  user_path(answer.user.id), class:"comment-name" %> 
+          <%if  user_signed_in? && current_user.id == answer.user_id%>
+          <%# <%= link_to "削除",  post_comment_path(@post, comment), method: :delete, class:"comment-delete" %>  %>
+          <%end %>
+        </li>
+      <% end %>
+    </ul>
+    </div>
+    
+
+
   
   </div>
 
