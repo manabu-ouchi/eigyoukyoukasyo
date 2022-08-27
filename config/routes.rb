@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   resources :records, only: [:index, :new, :create]
   get '/questions/genre/:id', to: "questions#genre"
   resources :users, only: :show
-  resources :questions
+  resources :questions do
+    resources :answers, only: [:create]
+  end
 end
