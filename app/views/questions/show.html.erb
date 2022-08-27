@@ -44,7 +44,7 @@
           <div class="comment-name-flex">
           <%= link_to answer.user.last_name + "さん",  user_path(answer.user.id), class:"comment-name" %> 
           <%if  user_signed_in? && current_user.id == answer.user_id%>
-          <%# <%= link_to "削除",  post_comment_path(@post, comment), method: :delete, class:"comment-delete" %>  %>
+          <%= link_to "削除",  question_answer_path(@question, answer), method: :delete, class:"comment-delete"  %>
           <%end %>
         </li>
       <% end %>
