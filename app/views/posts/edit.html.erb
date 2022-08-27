@@ -4,12 +4,15 @@
  <%= render 'shared/error_messages', model: f.object %>
 
 <div class="cp_group">
- <%= @post.genre.name %> （ジャンル）
+ ジャンル：<%= @post.genre.name %> 
+</div>
+<div class="cp_group">
+ タイトル：<%= @post.title %> 
 </div>
 
 <div class="cp_group">
-  <%= f.text_area :title %>
-  <label class="cp_label" for="input">投稿内容</label>
+  <%= f.text_area :content %>
+  <label class="cp_label" for="input">投稿内容（編集）</label>
   <i class="bar"></i>
 </div>
 <div class="submit-btn">
