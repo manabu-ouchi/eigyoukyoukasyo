@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   end
   resources :records, only: [:index, :new, :create]
   resources :users, only: :show
-  resources :questions, only: :index
+  resources :questions, only: [:index, :new, :create]
 end

@@ -1,0 +1,27 @@
+<div class="cp_form">
+<%= form_with model: @question,  local: true do |f| %>
+<h1>質問フォーム</h1>
+ <%= render 'shared/error_messages', model: f.object %>
+
+<div class="cp_group">
+<%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"input-default"}) %>
+  <label class="cp_label" for="input">ジャンル</label>
+</div>
+
+<div class="cp_group">
+  <%= f.text_area :title %>
+  <label class="cp_label" for="input">タイトル</label>
+  <i class="bar"></i>
+</div>
+<div class="cp_group">
+  <%= f.text_area :content %>
+  <label class="cp_label" for="input">質問内容</label>
+  <i class="bar"></i>
+</div>
+<div class="submit-btn">
+<%= f.submit "投稿する" ,class:"submit" %>
+</div>
+ 
+</div>
+<% end %>
+</div>
