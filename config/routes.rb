@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get '/questions/genre/:id', to: "questions#genre"
   resources :users, only: :show
   resources :questions do
-    resources :answers, only: [:create]
+    resources :answers, only: [:create, :destroy]
   end
 end
