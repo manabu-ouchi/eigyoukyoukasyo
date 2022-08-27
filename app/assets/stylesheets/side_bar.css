@@ -28,6 +28,16 @@
   border: solid 1px  #26c6da;
 }
 
+.current_user{
+	background-color: #f1e9fc;
+}
+
+.current_user_name {
+
+	color: rgb(123, 0, 255);
+	text-align: right;
+}
+
 .cp_menu {
 	max-width: 360px;
 	margin: 0 auto;

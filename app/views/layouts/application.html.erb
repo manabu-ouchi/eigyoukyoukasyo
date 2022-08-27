@@ -40,6 +40,12 @@
     
       <div class="main">
         <div class="sidebar">
+          <!--▽▽サイドバーリスト▽▽-->
+          <% if user_signed_in? %>
+          <div class="current_user">
+          こんにちは <%= link_to current_user.last_name + "さん", user_path(current_user.id), class: "current_user_name"%>
+          </div>
+          <% end %>
           <div class="cp_menu">
             <label for="cp_menu_bar1">投稿を見る</label>
             <input type="radio" name="radio" id="cp_menu_bar1" class="accordion" />
@@ -68,6 +74,7 @@
               <li><a href=""></a>支店結果</li>         
             </ul>
           </div>
+           <!--△△サイドバーリスト△△-->
         </div>
         <div class="content">
           <div class="flex-content">
@@ -76,7 +83,6 @@
         </div>
       </div>
     </div>
-<!--△△ヘッダー△△-->
 
  
   </body>
