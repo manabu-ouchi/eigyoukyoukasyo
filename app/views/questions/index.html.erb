@@ -1,0 +1,9 @@
+<div class="main-wrap">
+  <div class="post-wraper">
+   <div class="post-title">質問一覧</div>
+    <% @questions.each do |question|%>   
+      <%= render partial: "shared/post", locals: { post: question } %>
+    <% end %>
+  </div>
+
+</div>
