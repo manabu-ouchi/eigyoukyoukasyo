@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
   resources :records, only: [:index, :new, :create]
+  get '/questions/genre/:id', to: "questions#genre"
   resources :users, only: :show
   resources :questions
 end

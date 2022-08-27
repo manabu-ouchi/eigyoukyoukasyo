@@ -43,11 +43,21 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def genre
+    @questions = Question.where(genre_id: params[:id]).order('created_at DESC')
+
+  end
+
 
   private
 
   def question_params
     params.require(:question).permit(:title, :content, :genre_id).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    question = Question.find(params[:id])
+    redirect_to root_path unless user_signed_in? && current_user.id == question.user_id
   end
 
   def set_question
