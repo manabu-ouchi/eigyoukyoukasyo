@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: [:show]
+  before_action :set_question, only: [:show, :edit, :update]
 
   def index
     @questions = Question.includes(:user).order('created_at DESC')
@@ -20,6 +20,19 @@ class QuestionsController < ApplicationController
 
   def show
     
+  end
+
+  def edit
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to question_path(@question.id)
+
+    else
+      render :edit
+    end
+
   end
 
 

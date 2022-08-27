@@ -1,0 +1,24 @@
+<div class="cp_form">
+<%= form_with model: @question, local: true do |f| %>
+<h1>質問編集フォーム</h1>
+ <%= render 'shared/error_messages', model: f.object %>
+
+<div class="cp_group">
+ジャンル： <%= @question.genre.name %> 
+</div>
+<div class="cp_group">
+タイトル： <%= @question.title %>
+</div>
+
+<div class="cp_group">
+  <%= f.text_area :content %>
+  <label class="cp_label" for="input">投稿内容（編集）</label>
+  <i class="bar"></i>
+</div>
+<div class="submit-btn">
+<%= f.submit "編集する" ,class:"submit" %>
+</div>
+ 
+</div>
+<% end %>
+</div>
