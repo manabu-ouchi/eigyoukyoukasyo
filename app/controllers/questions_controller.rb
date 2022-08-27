@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: [:show, :edit, :update]
+  before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   def index
     @questions = Question.includes(:user).order('created_at DESC')
@@ -33,6 +33,12 @@ class QuestionsController < ApplicationController
       render :edit
     end
 
+  end
+
+  def destroy
+    if @question.destroy
+       redirect_to questions_path
+    end
   end
 
 
