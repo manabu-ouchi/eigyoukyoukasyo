@@ -1,0 +1,32 @@
+
+
+
+<div class="main-wrap">
+  <div class="post-wraper">
+  
+    <div class="post-title">質問詳細</div>
+    <%  if user_signed_in? && current_user.id == @question.user_id %>
+    <div class="prototype__manage">
+          <%= link_to "編集する", edit_post_path(@question.id),method: :get, class: :prototype__btn %>
+          <%= link_to "削除する", post_path(@question.id), method: :delete, class: :prototype__btn %>
+    </div>
+     <% end %>
+    <div class="post-wrap" >
+      <div class="post-header">
+        <div class="post-header-title">  <%= link_to @question.user.last_name + "さん", user_path(@question.user.id), class: "cp_textlink04"%> </div>
+        <div class="post-user-name"> </div>
+      </div>
+      <div class="post-titles">
+        タイトル：<%= @question.title%>
+      </div>
+      <div class="post-content">
+       内容： <%= @question.content%>
+      </div>
+    </div>
+
+  
+  </div>
+
+ 
+
+</div>

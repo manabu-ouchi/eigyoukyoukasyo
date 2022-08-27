@@ -2,7 +2,7 @@
   <div class="post-wraper">
    <div class="post-title">質問一覧</div>
     <% @questions.each do |question|%>   
-      <%= render partial: "question", locals: { post: question } %>
+      <%= render partial: "question", locals: { question: question } %>
     <% end %>
   </div>
 
