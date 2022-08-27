@@ -1,0 +1,9 @@
+<div class="main-wrap">
+  <div class="post-wraper">
+   <div class="post-title">投稿一覧</div>
+    <% @questions.each do |question|%>   
+       <%= render partial: "question", locals: { question: question } %>
+    <% end %>
+  </div>
+
+</div>
