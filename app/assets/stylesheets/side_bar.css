@@ -23,7 +23,6 @@
 
 .sidebar {
   width: 250px;
-  height: 100%;
   box-sizing: border-box;
   border: solid 1px  #26c6da;
 }
@@ -39,7 +38,6 @@
 }
 
 .cp_menu {
-	max-width: 360px;
 	margin: 0 auto;
 	padding: 0;
 }
@@ -81,7 +79,7 @@
 	max-height: 0;
 	transition: all 0.5s;
 }
-/*リストが増えたらULごとに追加してください*/
+/*リストが増えたらULごとに追加*/
 #cp_menu_bar1:checked ~ #link1 li,
 #cp_menu_bar2:checked ~ #link2 li,
 #cp_menu_bar3:checked ~ #link3 li {
