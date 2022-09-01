@@ -39,6 +39,7 @@ https://docs.google.com/spreadsheets/d/14Q3cZya5yf4pSKuwqRcBq2PBytxXCliJrpHf1zVy
 
 
 # 実装予定の機能
+お気に入り機能
 企業秘密になるので管理者機能をつけて、登録できる人を制限する
 支店結果一覧
 
