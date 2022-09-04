@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   end
   resources :records, only: [:index, :new, :create]
   get '/questions/genre/:id', to: "questions#genre"
-  resources :users, only: :show
   resources :questions do
     resources :answers, only: [:create, :destroy]
+  end
+
+  resources :posts, expect: [:index] do
+    resource :favorites, only: [:create, :destroy]
   end
 end

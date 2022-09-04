@@ -1,7 +1,20 @@
  <div class="post-wrap" >
       <div class="post-header">
         <div class="post-header-title"> <%= link_to post.user.last_name + "さん", user_path(post.user.id), class: "cp_textlink04"%> </div>
-        <div class="post-user-name"><%= link_to "投稿詳細を見る", post_path(post.id),  class: "cp_textlink04" %> </div>
+        <div class="post-header-right">
+          <div class="post-user-name"><%= link_to "投稿詳細を見る", post_path(post.id),  class: "cp_textlink04" %> </div>
+          <div>
+            <%if post.user_id != current_user.id &&  !Favorite.exists?(user_id: current_user.id, post_id: post.id) %>
+              <%=link_to post_favorites_path(post.id),method: :post do%> 
+                <span class="fav-heart">&hearts;</span>
+              <%end%>
+            <%elsif Favorite.exists?(user_id: current_user.id, post_id: post.id) %>
+              <%= link_to post_favorites_path(post.id),method: :delete do %> 
+                <span class="fav-heart2">&hearts;</span>
+              <%end%>
+            <%end%>
+          </div>
+        </div>
       </div>
       <div class="post-titles">
       タイトル（<%= post.genre.name%>）：<%= post.title%>
