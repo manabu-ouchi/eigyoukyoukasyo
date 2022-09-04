@@ -1,4 +1,9 @@
-
+.fav-heart{
+	color: #999;
+}
+.fav-heart2{
+	color: palevioletred;
+}
 
 .main-wrap{
   width: 100%;
@@ -92,7 +97,12 @@
   padding: 5px;
   word-wrap: break-word;
 
-}.cp_block {
+}
+
+.post-header-right{
+	display: flex;
+}
+.cp_block {
 	margin: 5em auto;
 	text-align: center;
 }
