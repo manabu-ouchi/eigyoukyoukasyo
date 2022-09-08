@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   resources :posts, expect: [:index] do
     resource :favorites, only: [:create, :destroy]
   end
+
+  resources :favorites, only: [:index]
 end
