@@ -48,6 +48,7 @@
           こんにちは <%= link_to current_user.last_name + "さん", user_path(current_user.id), class: "current_user_name"%>
           </div>
           <% end %>
+          <%= link_to  "お気に入り", favorites_path, class:"fev-list"%>
           <div class="cp_menu">
             <label for="cp_menu_bar1">投稿を見る</label>
             <input type="radio" name="radio" id="cp_menu_bar1" class="accordion" />

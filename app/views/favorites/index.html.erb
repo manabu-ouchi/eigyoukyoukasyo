@@ -1,0 +1,11 @@
+<div class="main-wrap">
+  <div class="post-wraper">
+   <div class="post-title">お気に入り一覧</div>
+    <% @favorite_list.each do |post|%> 
+     <div class="post-wrap",  id="post_<%= post.id %>" >
+      <%= render partial: "posts/post", locals: { post: post } %>
+     </div>
+    <% end %>
+  </div>
+
+</div>

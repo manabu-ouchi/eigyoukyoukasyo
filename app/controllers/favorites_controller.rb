@@ -1,6 +1,11 @@
 class FavoritesController < ApplicationController
-  before_action :set_post
+  before_action :set_post, only: [:create, :destroy]
   before_action :authenticate_user! 
+  
+  def index
+    favorites = Favorite.where(user_id: current_user.id).pluck(:post_id) 
+    @favorite_list = Post.find(favorites)
+  end
 
 
   def create
