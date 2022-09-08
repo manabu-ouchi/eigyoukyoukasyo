@@ -37,6 +37,12 @@
 	text-align: right;
 }
 
+.fev-list{
+	background-color: #f7a3f2;
+	color: #fffffF;
+	padding: 12px;
+}
+
 .cp_menu {
 	margin: 0 auto;
 	padding: 0;
