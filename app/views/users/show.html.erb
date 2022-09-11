@@ -36,8 +36,10 @@
 </table>
 
   <div class="post-title">投稿一覧</div>
-    <% @posts.each do |post|%>   
+    <% @posts.each do |post|%>  
+       <div class="post-wrap"> 
        <%= render partial: "posts/post", locals: { post: post } %>
+       </div>
     <% end %>
   </div>
 
